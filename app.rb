@@ -23,13 +23,13 @@ post '/8ts' do
 	uris = []
 	tracks.each do |track|
 		result = MetaSpotify::Track.search(track)
-		uris << result[:tracks][0].uri.gsub("spotify:track:","") if (result.count > 0)
+		uris << result[:tracks][0].uri.gsub("spotify:track:","") if (result.count > 0) rescue nil
 	end
 	# https://embed.spotify.com/?uri=spotify:trackset:cggaurav:0Qw7qGuXlVBZLcfoQ17yZn,5tu9ExlYqrlSk1MjAMTr2O,67Hna13dNDkZvBpTXRIaOJ&theme=white&view=coverart
 	src = 'https://embed.spotify.com/?uri=spotify:trackset:'
 	src += username.to_s
 	src += ":"
-	src += uris.join(",")
+	src += uris.compact.join(",")
 	src += '&theme=white&view=coverart'
 	return {'src' => src}.to_json
 end
