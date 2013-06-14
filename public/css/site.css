@@ -19,4 +19,4 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 #username{ width: 500px; margin-left:10px; margin-right:10px;}
 #loader { position:absolute; left:50%; top:55%;}
 .spotifyplaylist { padding:20px; text-align: center;}
-.footer {  letter-spacing: normal; font-family: Arial; font-size: 13px; position: absolute; right:0; bottom: 2%; width:100px;}
+.footer {  letter-spacing: normal; font-family: Arial; font-size: 13px; position: fixed; right:0; bottom: 2%; width:100px;}
