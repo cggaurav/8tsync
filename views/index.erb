@@ -1,0 +1,42 @@
+<div id="content_wrapper">
+  <div id="pure-g" class="header">
+  	<img src="img/8ts.png"></div>
+	</div
+	<div class="pure-g">
+	    <div class="pure-1-2">
+		    <input type="text" id="username" class="pure-input-rounded">
+		    <button type="submit" id="submit" class="pure-button">Search</button>
+	    </div>
+	    <div class="pure-1-2">
+	    	<iframe src="" id="spotify" class="spotify" width="640px" height="720px" frameborder="0" allowtransparency="true"></iframe>
+	   	</div>
+	   	<div id="loader" style="display: none;">
+	   		<img src="/img/ajax-loader.gif">
+	   	</div>
+	</div>
+</div>
+<script>
+	$('#submit').click(function(){
+		$("#loader").show();
+		var username = $('#username').val();
+		$.ajax({
+		  url: '/8ts',
+		  type: 'POST',
+		  dataType: 'json',
+		  data: {username: username},
+		  complete: function(xhr, textStatus) {
+		    //called when complete
+		  },
+		  success: function(data, textStatus, xhr) {
+		  	console.log(textStatus);
+		    console.log(data);
+		    $("#loader").hide();
+		    $('#spotify').attr('src', data.src);
+		  },
+		  error: function(xhr, textStatus, errorThrown) {
+		    //called when there is an error
+		    console.log(errorThrown);
+		  }
+		});
+	})
+</script>
