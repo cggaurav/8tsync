@@ -1,19 +1,20 @@
-<div id="content_wrapper">
-  <div id="pure-g" class="header">
-  	<img src="img/8ts.png"></div>
-	</div
-	<div class="pure-g">
-	    <div class="pure-1-2">
-		    <input type="text" id="username" class="pure-input-rounded">
+<div id="pure-g">
+		<div class="pure-g header">
+  			<img src="img/8ts.png" />
+  	</div>
+		<div class="pure-g pure-form form">
+		    <input type="text" id="username" class="pure-input">
 		    <button type="submit" id="submit" class="pure-button">Search</button>
-	    </div>
-	    <div class="pure-1-2">
-	    	<iframe src="" id="spotify" class="spotify" width="640px" height="720px" frameborder="0" allowtransparency="true"></iframe>
-	   	</div>
-	   	<div id="loader" style="display: none;">
+		</div>
+		<div class="pure-g" id="loader" style="display: none;">
 	   		<img src="/img/ajax-loader.gif">
-	   	</div>
-	</div>
+	  </div>
+	  <div class="pure-g spotifyplaylist">
+	    	<iframe src="" id="spotify" class="spotify" width="640px" height="720px" frameborder="0" allowtransparency="true"></iframe>
+	  </div>
+	  <div class="pure-g footer">
+	  		<a href="http://twitter.com/cggaurav">@cggaurav</a>
+	  </div>
 </div>
 <script>
 	$('#submit').click(function(){
