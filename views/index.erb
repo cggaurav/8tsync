@@ -40,4 +40,9 @@
 		  }
 		});
 	})
+	$('#username').keydown(function (e){
+	    if(e.keyCode == 13){
+	    	$('#submit').trigger('click');
+	    }
+	})
 </script>

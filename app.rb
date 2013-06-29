@@ -13,7 +13,8 @@ end
 
 post '/8ts' do
 	username = params[:username]
-	url = "http://8tracks.com/users/" + username + "/favorite_tracks"
+	url = "http://8tracks.com/users/" + username + "/favorite_tracks?per_page=1000"
+	# http://8tracks.com/users/aliamin/favorite_tracks?per_page=1000
 	# 8tracks.com/users/mahesh427/favorite_tracks
 	html = Nokogiri::HTML(open(url))
 	tracks = []
